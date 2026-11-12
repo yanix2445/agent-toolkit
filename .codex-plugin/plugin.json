@@ -1,0 +1,25 @@
+{
+  "name": "xcode-integration",
+  "version": "1.0.0+codex.20261112060407",
+  "description": "Skills export\u00e9s de Xcode et pont MCP officiel d\u2019Apple r\u00e9unis dans un plugin local.",
+  "author": {
+    "name": "yanis"
+  },
+  "homepage": "https://developer.apple.com/documentation/xcode/giving-external-agents-access-to-xcode",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Int\u00e9gration Xcode",
+    "shortDescription": "Skills Apple et outils Xcode pour Codex.",
+    "longDescription": "Utilise les skills fournis par Xcode et acc\u00e8de \u00e0 la compilation, aux tests, aux aper\u00e7us SwiftUI et \u00e0 la documentation via le MCP Xcode.",
+    "developerName": "yanis",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Liste les sch\u00e9mas du projet Xcode ouvert."
+    ]
+  }
+}
