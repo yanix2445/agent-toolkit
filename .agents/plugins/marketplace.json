@@ -1,7 +1,7 @@
 {
-  "name": "plugin-skills",
+  "name": "agent-toolkit",
   "interface": {
-    "displayName": "Plugin Skills"
+    "displayName": "Agent Toolkit"
   },
   "plugins": [
     {

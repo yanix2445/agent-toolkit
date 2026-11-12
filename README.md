@@ -1,4 +1,4 @@
-# Plugin Skills
+# Agent Toolkit
 
 Catalogue de plugins Codex maintenu dans ce dépôt. Chaque plugin est un paquet indépendant sous `plugins/`.
 
@@ -11,14 +11,14 @@ Catalogue de plugins Codex maintenu dans ce dépôt. Chaque plugin est un paquet
 Enregistre le catalogue une fois, puis installe le plugin qui t’intéresse.
 
 ```zsh
-codex plugin marketplace add yanix2445/Plugin-Skills --ref main
-codex plugin add xcode-integration@plugin-skills
+codex plugin marketplace add yanix2445/agent-toolkit --ref main
+codex plugin add xcode-integration@agent-toolkit
 ```
 
 Après un push sur `main`, actualise le catalogue puis ouvre un nouveau chat.
 
 ```zsh
-codex plugin marketplace upgrade plugin-skills
+codex plugin marketplace upgrade agent-toolkit
 ```
 
 ## Ajouter un plugin

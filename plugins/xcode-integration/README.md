@@ -10,7 +10,7 @@ Depuis la racine du dépôt Git, lance cette commande dans le Terminal.
 ./plugins/xcode-integration/actualiser.zsh
 ```
 
-Récupère la version publiée avec `codex plugin marketplace upgrade plugin-skills`, puis ouvre un nouveau chat. Le [guide du dépôt](../../README.md) décrit l’installation depuis GitHub.
+Récupère la version publiée avec `codex plugin marketplace upgrade agent-toolkit`, puis ouvre un nouveau chat. Le [guide du dépôt](../../README.md) décrit l’installation depuis GitHub.
 
 ## Fonctionnement
 
@@ -25,14 +25,14 @@ codex plugin marketplace list
 codex plugin list
 ```
 
-Vérifie que le catalogue `plugin-skills` et le plugin `xcode-integration` figurent dans les listes. Dans un nouveau chat avec ton projet ouvert dans Xcode, demande au MCP Xcode de lister les schémas du projet pour vérifier la connexion.
+Vérifie que le catalogue `agent-toolkit` et le plugin `xcode-integration` figurent dans les listes. Dans un nouveau chat avec ton projet ouvert dans Xcode, demande au MCP Xcode de lister les schémas du projet pour vérifier la connexion.
 
 Si le script retourne un export inattendu, vérifie le Xcode actif avec `xcode-select -p` et sa version avec `xcodebuild -version`.
 
 Pour désinstaller ce plugin dans Codex, utilise cette commande.
 
 ```zsh
-codex plugin remove xcode-integration@plugin-skills
+codex plugin remove xcode-integration@agent-toolkit
 ```
 
 [Format et installation des plugins locaux](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli) · [Accès MCP officiel à Xcode](https://developer.apple.com/documentation/xcode/giving-external-agents-access-to-xcode)
