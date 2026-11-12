@@ -1,39 +1,28 @@
-# Plugin Apple Xcode pour Codex
+# Plugin Skills
 
-Ce dossier réunit les skills officiels exportés par Xcode et le serveur MCP Apple. Le manifeste Codex et sa configuration MCP sont assemblés localement. Avec Xcode 27.2 (build `27B52`), le plugin fournit 16 skills, dont les spécialistes SwiftUI, App Intents, accessibilité et traduction.
+Catalogue de plugins Codex maintenu dans ce dépôt. Chaque plugin est un paquet indépendant sous `plugins/`.
 
-## Publier les skills après une mise à jour de Xcode
+## Plugins
 
-Dans un dépôt Git avec une branche distante configurée ou un remote `origin`, lance cette commande dans le Terminal.
+- [Intégration Xcode](plugins/xcode-integration/README.md) réunit les skills exportés par Xcode et le pont MCP Apple.
 
-```zsh
-/Users/yanis/Developer/Plugin-Skills/xcode-integration/actualiser.zsh
-```
+## Installer et actualiser dans Codex
 
-Si Codex suit ton dépôt GitHub, récupère la version publiée avec `codex plugin marketplace upgrade apple-xcode-local`, puis ouvre un nouveau chat.
-
-## Fonctionnement
-
-`actualiser.zsh` appelle `xcrun agent plugin path --plugin-format codex` et utilise le chemin retourné par Xcode. Il remplace les dossiers de `skills/` par ceux de cet export. S’il y a des changements, il crée un commit limité à `skills/` au format [Conventional Commits 1.0.0](https://www.conventionalcommits.org/fr/v1.0.0/). Le titre indique le build Xcode et le corps détaille l’export et les dossiers touchés. Il pousse ensuite la branche courante, ce qui permet aussi de réessayer un push après un échec. Le [catalogue](.agents/plugins/marketplace.json) référence la racine de ce dossier avec `./`.
-
-Le [manifeste](.codex-plugin/plugin.json) référence les skills et le [fichier MCP](.mcp.json), qui lance le pont officiel `xcrun mcpbridge`. Pour utiliser ses outils, ouvre ton projet dans Xcode et autorise les agents externes dans **Settings → Intelligence → Model Context Protocol**.
-
-## Vérification et entretien
+Enregistre le catalogue une fois, puis installe le plugin qui t’intéresse.
 
 ```zsh
-codex plugin marketplace list
-codex plugin list
+codex plugin marketplace add yanix2445/Plugin-Skills --ref main
+codex plugin add xcode-integration@plugin-skills
 ```
 
-Vérifie que le catalogue `apple-xcode-local` et le plugin `xcode-integration` figurent dans les listes. Dans un nouveau chat avec ton projet ouvert dans Xcode, demande au MCP Xcode de lister les schémas du projet pour vérifier la connexion.
-
-Si le script retourne un export inattendu, vérifie le Xcode actif avec `xcode-select -p` et sa version avec `xcodebuild -version`. Si tu déplaces un catalogue enregistré comme dossier local, retire son enregistrement avec `codex plugin marketplace remove apple-xcode-local`, puis ajoute son nouveau chemin avec `codex plugin marketplace add`.
-
-Pour désinstaller le plugin et retirer son catalogue de Codex, exécute ces commandes.
+Après un push sur `main`, actualise le catalogue puis ouvre un nouveau chat.
 
 ```zsh
-codex plugin remove xcode-integration@apple-xcode-local
-codex plugin marketplace remove apple-xcode-local
+codex plugin marketplace upgrade plugin-skills
 ```
 
-[Format et installation des plugins locaux](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli) · [Accès MCP officiel à Xcode](https://developer.apple.com/documentation/xcode/giving-external-agents-access-to-xcode)
+## Ajouter un plugin
+
+Place le paquet dans `plugins/<nom-du-plugin>/` et ajoute une entrée dans le [catalogue commun](.agents/plugins/marketplace.json). Son `source.path` est relatif à la racine du dépôt, par exemple `./plugins/xcode-integration`.
+
+[Format des plugins et catalogues Codex](https://developers.openai.com/plugins/build/plugins#marketplace-metadata)

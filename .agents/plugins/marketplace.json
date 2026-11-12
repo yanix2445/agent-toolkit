@@ -1,14 +1,14 @@
 {
-  "name": "apple-xcode-local",
+  "name": "plugin-skills",
   "interface": {
-    "displayName": "Apple Xcode (local)"
+    "displayName": "Plugin Skills"
   },
   "plugins": [
     {
       "name": "xcode-integration",
       "source": {
         "source": "local",
-        "path": "./"
+        "path": "./plugins/xcode-integration"
       },
       "policy": {
         "installation": "AVAILABLE",
