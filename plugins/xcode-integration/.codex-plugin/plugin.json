@@ -1,6 +1,6 @@
 {
   "name": "xcode-integration",
-  "version": "1.0.0+codex.20261112060407",
+  "version": "1.0.0+codex.20261112073016",
   "description": "Skills export\u00e9s de Xcode et pont MCP officiel d\u2019Apple r\u00e9unis dans un plugin local.",
   "author": {
     "name": "yanis"
@@ -14,6 +14,9 @@
     "longDescription": "Utilise les skills fournis par Xcode et acc\u00e8de \u00e0 la compilation, aux tests, aux aper\u00e7us SwiftUI et \u00e0 la documentation via le MCP Xcode.",
     "developerName": "yanis",
     "category": "Developer Tools",
+    "brandColor": "#52BDF9",
+    "logo": "./assets/xcode-integration.png",
+    "composerIcon": "./assets/xcode-integration.png",
     "capabilities": [
       "Interactive",
       "Write"

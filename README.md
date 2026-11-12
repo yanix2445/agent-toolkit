@@ -1,5 +1,7 @@
 # Agent Toolkit
 
+<img src="assets/agent-toolkit.png" alt="Deux outils croisés en pixel art" width="88" height="88">
+
 Catalogue de plugins Codex maintenu dans ce dépôt. Chaque plugin est un paquet indépendant sous `plugins/`.
 
 ## Plugins
