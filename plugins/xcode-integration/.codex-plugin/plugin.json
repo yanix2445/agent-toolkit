@@ -1,6 +1,6 @@
 {
   "name": "xcode-integration",
-  "version": "1.0.0+codex.20261112073016",
+  "version": "1.0.0+codex.20261112073545",
   "description": "Skills export\u00e9s de Xcode et pont MCP officiel d\u2019Apple r\u00e9unis dans un plugin local.",
   "author": {
     "name": "yanis"
